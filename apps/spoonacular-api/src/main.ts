@@ -1,1 +1,3 @@
-console.log('Hello World!');
+import getRecipes from './app/getRecipes';
+
+export default { getRecipes };
