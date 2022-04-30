@@ -4,15 +4,18 @@
  */
 
 import * as express from 'express';
-
-const app = express();
-
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to server!' });
-});
+import api from './app/routes';
 
 const port = process.env.port || 3333;
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send({ message: 'Welcome to server!' });
+});
+app.use('/api', api);
+
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
+
 server.on('error', console.error);
