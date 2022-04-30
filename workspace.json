@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "data-access": "libs/data-access",
     "server": "apps/server",
     "spoonacular-api": "apps/spoonacular-api",
     "ui": "libs/ui",

@@ -1,0 +1,11 @@
+{
+  "name": "@pinned-recipes/data-access",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.20.0"
+  }
+}

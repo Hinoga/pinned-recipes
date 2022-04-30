@@ -1443,7 +1443,7 @@
     rxjs "^6.5.4"
     tslib "^2.3.0"
 
-"@nrwl/js@14.0.5":
+"@nrwl/js@14.0.5", "@nrwl/js@^14.0.5":
   version "14.0.5"
   resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-14.0.5.tgz#0bdde76457841fdc0b58021b5ffc7a6a46c1b969"
   integrity sha512-QSEdfyZZhMYQ2u7TVLCNYl9JD5AtDLqjREXc6Kncy/W0ukeXH3Js3nMDvsmEmTgv74MJesmdvGP3F6083pQmUw==
