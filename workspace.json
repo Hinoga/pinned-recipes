@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "server": "apps/server",
+    "spoonacular-api": "apps/spoonacular-api",
+    "ui": "libs/ui",
     "web-application": "apps/web-application",
     "web-application-e2e": "apps/web-application-e2e"
   }

@@ -1,0 +1,52 @@
+{
+  "root": "apps/spoonacular-api",
+  "sourceRoot": "apps/spoonacular-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/spoonacular-api",
+        "main": "apps/spoonacular-api/src/main.ts",
+        "tsConfig": "apps/spoonacular-api/tsconfig.app.json",
+        "assets": ["apps/spoonacular-api/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/spoonacular-api/src/environments/environment.ts",
+              "with": "apps/spoonacular-api/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "spoonacular-api:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/spoonacular-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/spoonacular-api"],
+      "options": {
+        "jestConfig": "apps/spoonacular-api/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
