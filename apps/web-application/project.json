@@ -1,74 +1,43 @@
 {
   "root": "apps/web-application",
-  "sourceRoot": "apps/web-application/src",
+  "sourceRoot": "apps/web-application",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:webpack",
+      "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/web-application",
-        "index": "apps/web-application/src/index.html",
-        "baseHref": "/",
-        "main": "apps/web-application/src/main.tsx",
-        "polyfills": "apps/web-application/src/polyfills.ts",
-        "tsConfig": "apps/web-application/tsconfig.app.json",
-        "assets": [
-          "apps/web-application/src/favicon.ico",
-          "apps/web-application/src/assets"
-        ],
-        "styles": [],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "root": "apps/web-application",
+        "outputPath": "dist/apps/web-application"
       },
       "configurations": {
-        "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
-        },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/web-application/src/environments/environment.ts",
-              "with": "apps/web-application/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
+        "development": {},
+        "production": {}
       }
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "web-application:build",
-        "hmr": true,
-        "proxyConfig": "apps/web-application/proxy.conf.json"
+        "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "web-application:build:development"
+          "buildTarget": "web-application:build:development",
+          "dev": true
         },
         "production": {
           "buildTarget": "web-application:build:production",
-          "hmr": false
+          "dev": false
         }
       }
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+    "export": {
+      "executor": "@nrwl/next:export",
       "options": {
-        "lintFilePatterns": ["apps/web-application/**/*.{ts,tsx,js,jsx}"]
+        "buildTarget": "web-application:build:production"
       }
     },
     "test": {
@@ -77,6 +46,13 @@
       "options": {
         "jestConfig": "apps/web-application/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/web-application/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

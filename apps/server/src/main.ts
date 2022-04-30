@@ -5,10 +5,11 @@
 
 import * as express from 'express';
 import api from './app/routes';
+import { globalErrorHandler } from './app/errors/globalErrorMiddleware';
 
 const port = process.env.port || 3333;
 const app = express();
-
+app.use(globalErrorHandler);
 app.get('/', (req, res) => {
   res.send({ message: 'Welcome to server!' });
 });

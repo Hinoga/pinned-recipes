@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pinned-recipes/data-access": ["libs/data-access/src/index.ts"],
+      "@pinned-recipes/data-access-client": [
+        "libs/data-access/client/src/index.ts"
+      ],
+      "@pinned-recipes/data-access-contexts": [
+        "libs/data-access/contexts/src/index.ts"
+      ],
       "@pinned-recipes/spoonacular-client": [
         "libs/spoonacular-client/src/index.ts"
       ],
