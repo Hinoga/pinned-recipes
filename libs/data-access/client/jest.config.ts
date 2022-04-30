@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'data-access',
-  preset: '../../jest.preset.ts',
+  displayName: 'data-access-client',
+  preset: '../../../jest.preset.ts',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/libs/data-access',
+  coverageDirectory: '../../../coverage/libs/data-access/client',
 };

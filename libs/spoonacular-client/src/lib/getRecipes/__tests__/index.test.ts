@@ -1,5 +1,5 @@
-import { mockSpoonacularClient } from '@pinned-recipes/data-access';
-import getRecipes from '../';
+import { mockSpoonacularClient } from '@pinned-recipes/data-access-client';
+import { getRecipes } from '../';
 
 import { SPOONACULAR_CLIENT } from 'libs/data-access/src/lib/constants';
 import { recipeSuccessRequest } from '../mocks/mockResponses';

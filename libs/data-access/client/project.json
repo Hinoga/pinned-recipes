@@ -1,0 +1,32 @@
+{
+  "root": "libs/data-access/client",
+  "sourceRoot": "libs/data-access/client/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/data-access/client",
+        "main": "libs/data-access/client/src/index.ts",
+        "tsConfig": "libs/data-access/client/tsconfig.lib.json",
+        "assets": ["libs/data-access/client/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/data-access/client/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/data-access/client"],
+      "options": {
+        "jestConfig": "libs/data-access/client/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
