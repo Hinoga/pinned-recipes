@@ -1,0 +1,32 @@
+{
+  "root": "libs/spoonacular-client",
+  "sourceRoot": "libs/spoonacular-client/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/spoonacular-client",
+        "main": "libs/spoonacular-client/src/index.ts",
+        "tsConfig": "libs/spoonacular-client/tsconfig.lib.json",
+        "assets": ["libs/spoonacular-client/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/spoonacular-client/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spoonacular-client"],
+      "options": {
+        "jestConfig": "libs/spoonacular-client/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

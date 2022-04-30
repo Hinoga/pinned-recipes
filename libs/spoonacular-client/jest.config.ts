@@ -1,15 +1,14 @@
 module.exports = {
-  displayName: 'spoonacular-api',
+  displayName: 'spoonacular-client',
   preset: '../../jest.preset.ts',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
     },
   },
-  testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/spoonacular-api',
+  coverageDirectory: '../../coverage/libs/spoonacular-client',
 };
