@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@pinned-recipes/data-access": ["libs/data-access/src/index.ts"],
+      "@pinned-recipes/spoonacular-client": [
+        "libs/spoonacular-client/src/index.ts"
+      ],
       "@pinned-recipes/ui": ["libs/ui/src/index.ts"]
     }
   },

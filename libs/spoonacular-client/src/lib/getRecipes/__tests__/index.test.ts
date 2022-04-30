@@ -13,6 +13,6 @@ describe('Get Recipes', () => {
     const result = await getRecipes();
 
     expect(result).toEqual(recipeSuccessRequest);
-    expect(mockSpoonacularClient.history.get).toHaveLength(1);
+    expect(mockSpoonacularClient.history['get']).toHaveLength(1);
   });
 });

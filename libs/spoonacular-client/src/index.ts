@@ -1,1 +1,1 @@
-export * from './lib/spoonacular-client';
+export * from './lib/getRecipes';

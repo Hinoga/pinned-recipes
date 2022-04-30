@@ -3,7 +3,7 @@
   "projects": {
     "data-access": "libs/data-access",
     "server": "apps/server",
-    "spoonacular-api": "apps/spoonacular-api",
+    "spoonacular-client": "libs/spoonacular-client",
     "ui": "libs/ui",
     "web-application": "apps/web-application",
     "web-application-e2e": "apps/web-application-e2e"
