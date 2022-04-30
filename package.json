@@ -7,12 +7,11 @@
     "build": "nx build",
     "test": "nx test",
     "test-many": "nx run-many --target=test --all",
-    "start-many": "nx run-many --parallel --target=serve --projects=web-application,spoonacular-api,server"
+    "start-many": "nx run-many --parallel --target=serve --projects=web-application,server"
   },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",
-    "cors": "^2.8.5",
     "express": "4.17.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
