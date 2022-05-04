@@ -1,6 +1,6 @@
 export const SPOONACULAR_CLIENT = {
-  apiUrl: 'https://api.spoonacular.com/',
-  recipesPath: 'recipes/complexSearch?number=2',
+  apiUrl: 'https://api.spoonacular.com',
+  recipesPath: '/recipes/complexSearch',
   apiKey: 'eea24893d50e4de9b1b352d3a5e820e3',
 };
 

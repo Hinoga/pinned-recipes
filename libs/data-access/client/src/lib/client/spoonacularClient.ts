@@ -3,7 +3,7 @@ import { SPOONACULAR_CLIENT } from '../constants';
 
 export const spoonacularClient = axios.create({
   baseURL: SPOONACULAR_CLIENT.apiUrl,
-  headers: {
+  params: {
     apiKey: SPOONACULAR_CLIENT.apiKey,
   },
 });

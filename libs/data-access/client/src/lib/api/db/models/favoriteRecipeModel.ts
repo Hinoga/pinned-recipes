@@ -1,19 +1,24 @@
 import { Schema, models, model } from 'mongoose';
 
 const favoriteRecipeSchema = new Schema({
-  name: {
+  id: {
+    type: Number,
+    unique: true,
+    required: true,
+  },
+  title: {
     type: String,
     unique: false,
     required: true,
   },
-  id: {
+  image: {
     type: String,
     unique: false,
-    required: false,
+    required: true,
   },
-  userId: {
+  imageType: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
 });
