@@ -1,13 +1,34 @@
 import React from 'react';
-import { ItemList, ListContainer } from './styles';
+import { ContainerStyled } from './styles';
+import { useSpoonacularAPI } from '@pinned-recipes/data-access-contexts';
+import { Badge, Card, CardBody, CardFooter, Text } from '@pinned-recipes/ui';
+import EmptyList from './Empty';
 
 const List = () => {
+  const spoonacularRecipes = useSpoonacularAPI();
+  console.log(spoonacularRecipes);
   return (
-    <ListContainer>
-      {[1, 2].map((item) => (
-        <ItemList>{item}</ItemList>
-      ))}
-    </ListContainer>
+    <section>
+      {spoonacularRecipes.length > 0 ? (
+        <ContainerStyled>
+          {spoonacularRecipes.map((item) => (
+            <Card>
+              <img src={item.image} alt="" style={{ maxWidth: '100%' }} />
+              <CardBody>
+                <Text.Paragraph>{item.title}</Text.Paragraph>
+                <CardFooter>
+                  <Badge>C-{item.carbs}</Badge>
+                  <Badge>P-{item.protein}</Badge>
+                  <Badge>F-{item.fat}</Badge>
+                </CardFooter>
+              </CardBody>
+            </Card>
+          ))}
+        </ContainerStyled>
+      ) : (
+        <EmptyList />
+      )}
+    </section>
   );
 };
 

@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { SpoonacularAPIContextProvider } from '@pinned-recipes/data-access-contexts';
 import Head from 'next/head';
 import './styles.css';
 
@@ -6,10 +7,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to web-application!</title>
+        <title>Pinned Recipes</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <SpoonacularAPIContextProvider>
+          <Component {...pageProps} />
+        </SpoonacularAPIContextProvider>
       </main>
     </>
   );
