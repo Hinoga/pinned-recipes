@@ -1,3 +1,4 @@
+import { RecipeType } from '@pinned-recipes/spoonacular-client';
 import React, {
   useContext,
   useState,
@@ -7,10 +8,10 @@ import React, {
 } from 'react';
 import { getData } from './resources';
 
-const APIContext = createContext<any>(undefined as never);
+const APIContext = createContext<{ recipes: RecipeType[] }>(undefined as never);
 
 export const SpoonacularAPIContextProvider: FC<any> = ({ children }) => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<RecipeType[]>([]);
 
   useEffect(() => {
     async function fetchData() {
