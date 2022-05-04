@@ -6,7 +6,7 @@ export interface CardProps {
 }
 
 export function Card({ children }: CardProps) {
-  return <StyledCard>{children}</StyledCard>;
+  return <StyledCard animate={{ x: [0, 10, 0] }}>{children}</StyledCard>;
 }
 
 export default Card;

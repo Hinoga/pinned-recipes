@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const StyledCard = styled.div`
+export const StyledCard = styled(motion.div)`
   border: 2px solid #e7e7e7;
   border-radius: 10px;
   padding: 0.5rem;

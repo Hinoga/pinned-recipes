@@ -13,7 +13,7 @@ const H2 = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  font-size: 12px;
+  font-size: 16px;
   text-align: start;
   color: black;
 `;
