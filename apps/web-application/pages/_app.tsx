@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
-import { SpoonacularAPIContextProvider } from '@pinned-recipes/data-access-contexts';
 import Head from 'next/head';
 import './styles.css';
+import GlobalProviders from 'libs/data-access/contexts/src/lib/GlobalProvider';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,9 +10,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Pinned Recipes</title>
       </Head>
       <main className="app">
-        <SpoonacularAPIContextProvider>
+        <GlobalProviders>
           <Component {...pageProps} />
-        </SpoonacularAPIContextProvider>
+        </GlobalProviders>
       </main>
     </>
   );
