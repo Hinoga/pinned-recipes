@@ -1,12 +1,6 @@
 import { RecipeType } from '@pinned-recipes/spoonacular-client';
-import React, {
-  useContext,
-  useState,
-  useEffect,
-  createContext,
-  FC,
-} from 'react';
-import { getData } from './resources';
+import React, { useState, useEffect, createContext, FC } from 'react';
+import { getData } from './externalActions';
 
 const APIContext = createContext<{ recipes: RecipeType[] }>(undefined as never);
 
@@ -33,7 +27,7 @@ export const SpoonacularAPIContextProvider: FC<any> = ({ children }) => {
 };
 
 export const useSpoonacularAPI = () => {
-  const { recipes } = useContext(APIContext);
+  const { recipes } = React.useContext(APIContext);
   if (recipes === undefined) {
     throw new Error('Context must be used within a Provider');
   }
